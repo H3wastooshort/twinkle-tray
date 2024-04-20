@@ -202,7 +202,7 @@ getAllMonitors = async () => {
         for (const hwid2 in featuresList) {
             const monitor = featuresList[hwid2]
             const { features, id, hwid } = monitor
-            let brightnessType = (features.luminance ? 0x10 : (features.brightness ? 0x13 : 0x00))
+            let brightnessType = (features.brightness ? 0x13 : (features.luminance ? 0x10 : 0x00))
 
             // Use DDC Brightness overrides, if relevant
             if(typeof ddcBrightnessVCPs === "object" && Object.keys(ddcBrightnessVCPs).indexOf(hwid[1]) > -1) {
